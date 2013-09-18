@@ -5,5 +5,8 @@
   "ignore": [
     "**/.*",
     "bower_components"
-  ]
+  ],
+  "dependencies": {
+    "jasmine": "~1.3.1"
+  }
 }
