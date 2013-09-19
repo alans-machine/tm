@@ -53,4 +53,14 @@ describe('head', function(){
 
 	expect(head.read()).toBe(options.blank);
    });
+
+    it('should execute an instruction', function(){
+	var head = tm.tape('cb');
+	var instruction = { nextState : 's1', write: 'a', move: 'R' };
+
+	head.execute(instruction);
+
+	expect(head.read()).toBe('b');
+	expect(head.left().read()).toBe('a');
+    });
 });
