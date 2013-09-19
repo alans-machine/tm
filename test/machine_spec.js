@@ -77,4 +77,21 @@ describe('machine', function(){
 
 	expect(machine.halted()).toBe(true);
     });
+
+    it('should be able to configure HALT state', function(){
+	var options = { stopState : 'STOP' }
+	rulebook['s1']['H'] = { nextState: 'STOP' }
+	var machine = new tm.Machine('H', rulebook, 's1', options);
+
+	machine.step();
+
+	expect(machine.halted()).toBe(true);
+    });
+
+    it('should be able to configure blank symbol', function(){
+	var options = { blank : '_' }
+	var machine = new tm.Machine('', rulebook, startState, options);
+
+	expect(machine.read()).toBe(options.blank);
+    });
 });
