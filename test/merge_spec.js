@@ -24,4 +24,12 @@ describe('merge', function(){
 	expect(target.b).toBe('b');
 	expect(target.c).toBe('c');
     });
+
+    it('should not croak on undefined options', function(){
+	var target = { a: 'a' };
+
+	util.merge(target).and();
+
+	expect(target.a).toBe('a');
+    });
 });
