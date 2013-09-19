@@ -37,6 +37,14 @@ describe('head', function(){
 	expect(head.read()).toBe('');
     });
 
+    it('should write symbol', function(){
+	var head = tm.tape('b');
+
+	head.write('a')
+
+	expect(head.read()).toBe('a');
+    });
+
     it('should be able to configure blank symbol', function(){
 	var options = { blank : '_' };
 	var head = tm.tape('a', options);
