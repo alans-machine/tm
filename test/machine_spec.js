@@ -17,6 +17,7 @@ describe('machine', function(){
 
 	expect(machine.currentState()).toBe(startState);
 	expect(machine.read()).toBe('I');
+	expect(machine.error()).toBe(false);
     });
 
     it('should step through a single execution', function(){
@@ -56,5 +57,13 @@ describe('machine', function(){
 
 	expect(machine.currentState()).toBe('s3');
 	expect(machine.read()).toBe('I');
+    });
+
+    it('should halt in unknown state', function(){
+	var machine = new tm.Machine(word, rulebook, 'unknown state');
+
+	machine.step();
+
+	expect(machine.error()).toBe(true);
     });
 });
