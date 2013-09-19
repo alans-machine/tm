@@ -18,6 +18,7 @@ describe('machine', function(){
 	expect(machine.currentState()).toBe(startState);
 	expect(machine.read()).toBe('I');
 	expect(machine.error()).toBe(false);
+	expect(machine.halted()).toBe(false);
     });
 
     it('should step through a single execution', function(){
@@ -65,5 +66,15 @@ describe('machine', function(){
 	machine.step();
 
 	expect(machine.error()).toBe(true);
+	expect(machine.halted()).toBe(true);
+    });
+
+    it('should halt in HALT', function(){
+	rulebook['s1']['H'] = { nextState: 'HALT' }
+	var machine = new tm.Machine('H', rulebook, 's1');
+
+	machine.step();
+
+	expect(machine.halted()).toBe(true);
     });
 });
