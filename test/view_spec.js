@@ -35,6 +35,13 @@ describe('view', function(){
 	expect(fixture.querySelectorAll('.tape').length).toBe(1);
     });
 
+    it('should create a control container', function(){
+	var machine = new tm.Machine(word, rulebook, startState);
+	new tm.MachineView('fixture', machine);
+
+	expect(fixture.querySelectorAll('.control').length).toBe(1);
+    });
+
     describe('state', function(){
 	var machine;
 	var stateContainer;
@@ -102,6 +109,32 @@ describe('view', function(){
 	    expect(spans[2].innerText).toBe('I');
 	    expect(spans[3].innerText).toBe('');
 	    expect(spans[4].innerText).toBe('');
+	});
+    });
+
+    describe('control', function(){
+	var machine;
+	var controlContainer;
+
+	beforeEach(function(){
+	    machine = new tm.Machine('', rulebook, startState);
+	    new tm.MachineView('fixture', machine);
+	});
+
+	beforeEach(function(){
+	    controlContainer = fixture.querySelectorAll('.control')[0];
+	});
+
+	it('should contain a button', function(){
+	    expect(controlContainer.querySelectorAll('button').length).toBe(1);
+	});
+
+	it('should step the machine on button click', function(){
+	    var button = controlContainer.querySelector('button');
+
+	    button.click();
+
+	    expect(machine.currentState()).toBe('s2');
 	});
     });
 
