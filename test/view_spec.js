@@ -89,6 +89,15 @@ describe('view', function(){
 	    expect(tapeContainer.querySelectorAll('span').length).toBe(5);
 	});
 
+	it('should be possible to configure the number of spans', function(){
+	    var options = { borderCells: 3 }
+	    machine = new tm.Machine('II', rulebook, startState);
+	    new tm.MachineView('fixture', machine, options);
+	    tapeContainer  = fixture.querySelectorAll('.tape')[1];
+
+	    expect(tapeContainer.querySelectorAll('span').length).toBe(2*options.borderCells + 1);
+	});
+
 	it('span should contain the tape surrounding head', function(){
 	    var spans = tapeContainer.querySelectorAll('span');
 
