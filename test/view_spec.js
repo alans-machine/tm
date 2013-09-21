@@ -91,7 +91,7 @@ describe('view', function(){
         });
 
         it('should be possible to configure the number of spans', function(){
-            var options = { borderCells: 3 }
+            var options = { borderCells: 3 };
             machine = new tm.Machine('II', rulebook, startState);
             new tm.MachineView('fixture', machine, options);
             tapeContainer  = fixture.querySelectorAll('.tape')[1];

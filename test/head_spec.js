@@ -41,7 +41,7 @@ describe('head', function(){
     it('should write symbol', function(){
         var head = tm.tape('b');
 
-        head.write('a')
+        head.write('a');
 
         expect(head.read()).toBe('a');
     });

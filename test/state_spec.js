@@ -34,6 +34,6 @@ describe('stateMachine', function(){
 
         stateMachine.execute(instruction);
 
-        expect(stateMachine.currentState()).toBe('s2')
+        expect(stateMachine.currentState()).toBe('s2');
     });
 });
