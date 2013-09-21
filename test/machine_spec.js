@@ -1,3 +1,4 @@
+/*global describe:false, it:false, expect:false, tm: false */
 describe('machine', function(){
     var word = 'I';
     var rulebook = {

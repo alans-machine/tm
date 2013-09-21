@@ -1,3 +1,4 @@
+/*global describe:false, it:false, expect:false, tm:false */
 describe('head', function(){
     it('should be constructed with a word', function(){
 	var head = tm.tape('a');

@@ -1,3 +1,4 @@
+/*global describe:false, it:false, expect:false, util:false */
 describe('merge', function(){
     it('should should merge objects', function(){
 	var target = { a: 'a' };

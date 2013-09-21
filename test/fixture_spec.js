@@ -1,3 +1,4 @@
+/*global describe:false, it:false, expect:false, beforeEach:false, afterEach:false */
 describe('fixture setup', function(){
     var fixture;
 

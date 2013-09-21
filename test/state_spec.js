@@ -1,3 +1,4 @@
+/*global describe:false, it:false, expect:false, tm:false */
 describe('stateMachine', function(){
     var rulebook = {
 	's1' : {
