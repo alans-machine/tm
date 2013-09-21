@@ -54,6 +54,14 @@ module.exports = function(grunt) {
       lib_test: {
         src: ['lib/**/*.js', 'test/**/*.js']
       }
+    },
+    compress: {
+      dist: {
+	  src: 'dist/*',
+	  options: {
+	      archive: 'tm.zip'
+	  }
+      }
     }
   });
 
@@ -61,6 +69,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
