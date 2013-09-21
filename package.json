@@ -1,0 +1,16 @@
+{
+  "name": "tm",
+  "version": "0.0.0",
+  "description": "a turing machine in your browser",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alans-machine/tm.git"
+  },
+  "keywords": [
+    "turing",
+    "machine"
+  ],
+  "author": "Daan van Berkel",
+  "license": "MIT"
+}
