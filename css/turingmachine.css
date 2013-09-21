@@ -1,5 +1,5 @@
 .turing-machine {
-    width: 640px;
+    width: 310px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,6 +23,12 @@
     text-align: center;
     position: relative;
     bottom: -0.3em;
+}
+
+.tape {
+    border-style: solid none;
+    border-color: #000000;
+    border-width: 2px;
 }
 
 .cell {
