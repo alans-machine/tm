@@ -57,10 +57,10 @@ module.exports = function(grunt) {
     },
     compress: {
       dist: {
-	  src: 'dist/*',
-	  options: {
-	      archive: 'tm.zip'
-	  }
+          src: 'dist/*',
+          options: {
+              archive: 'tm.zip'
+          }
       }
     }
   });
