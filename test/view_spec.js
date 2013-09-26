@@ -102,11 +102,12 @@ describe('view', function(){
         it('span should contain the tape surrounding head', function(){
             var spans = tapeContainer.querySelectorAll('span');
 
-            expect(spans[0].innerText).toBe('');
-            expect(spans[1].innerText).toBe('');
-            expect(spans[2].innerText).toBe('I');
-            expect(spans[3].innerText).toBe('I');
-            expect(spans[4].innerText).toBe('');
+
+            expect(spans[0].innerHTML).toBe('');
+            expect(spans[1].innerHTML).toBe('');
+            expect(spans[2].innerHTML).toBe('I');
+            expect(spans[3].innerHTML).toBe('I');
+            expect(spans[4].innerHTML).toBe('');
         });
 
         it('span should contain the tape surrounding head even after a step', function(){
@@ -114,11 +115,11 @@ describe('view', function(){
 
             var spans = tapeContainer.querySelectorAll('span');
 
-            expect(spans[0].innerText).toBe('');
-            expect(spans[1].innerText).toBe('I');
-            expect(spans[2].innerText).toBe('I');
-            expect(spans[3].innerText).toBe('');
-            expect(spans[4].innerText).toBe('');
+            expect(spans[0].innerHTML).toBe('');
+            expect(spans[1].innerHTML).toBe('I');
+            expect(spans[2].innerHTML).toBe('I');
+            expect(spans[3].innerHTML).toBe('');
+            expect(spans[4].innerHTML).toBe('');
         });
     });
 
@@ -135,16 +136,22 @@ describe('view', function(){
             controlContainer = fixture.querySelectorAll('.control')[0];
         });
 
-        it('should contain a button', function(){
-            expect(controlContainer.querySelectorAll('button').length).toBe(1);
+        it('should contain control buttons', function(){
+            expect(controlContainer.querySelectorAll('button').length).toBe(3);
         });
 
-        it('should step the machine on button click', function(){
+        it('should step the machine on button \'step\' click', function(){
             var button = controlContainer.querySelector('button');
 
             button.click();
 
             expect(machine.currentState()).toBe('s2');
+        });
+
+        it('\'step\' button should have \'step\' as text', function(){
+            var button = controlContainer.querySelector('button');
+
+            expect(button.innerHTML).toBe('step');
         });
     });
 
